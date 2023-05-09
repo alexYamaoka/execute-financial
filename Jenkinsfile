@@ -5,16 +5,11 @@ pipeline {
     }
     
     stages {
-        // stage("checkout from github") {
-        //     steps {
-        //         git branch: 'main', credentialsId: 'Github_credential', url: 'https://github.com/alexYamaoka/execute-financial'
-        //     }
-        // }
         stage("build") {
             steps {
                 sh 'npm --version'
                 sh 'node -v'
-                sh 'npm install'
+                // sh 'npm install'
             }
         }
         stage("step_3") {
