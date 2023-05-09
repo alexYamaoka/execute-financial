@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
+    agent any
     tools {
         nodejs 'node_18.16.0'
     }
@@ -19,7 +14,6 @@ pipeline {
             steps {
                 sh "npm --version"
                 sh "node -v"
-                sh 'npm install'
             }
         }
         stage("step_3") {
